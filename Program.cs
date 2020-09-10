@@ -60,8 +60,6 @@ namespace CombinationVS
                 wynik = Kombinacja(num1, num2);
                 Console.WriteLine($"\nWynik dla kombinacji wynosi {wynik} mozliwosci.");
             }
-
-            Console.WriteLine("Dziekujemy za skorzystanie z programu");
         }
 
         static int NumbersCheck()
