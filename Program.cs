@@ -9,7 +9,7 @@ namespace CombinationVS
             int num1;
             int num2;
             int choice;
-            int wynik;
+            int result;
 
             Console.WriteLine("Witaj w programie obliczajacym kombinacje i permutacje.");
             Console.WriteLine("Wpisz 2 liczby. Liczba pierwsza musi byc wieksza badz rowna drugiej.");
@@ -52,13 +52,13 @@ namespace CombinationVS
 
             if (choice == 1)
             {
-                wynik = Permutacja(num1, num2);
-                Console.WriteLine($"\nWynik dla permutacji wynosi {wynik} mozliwosci.");
+                result = Permutacja(num1, num2);
+                Console.WriteLine($"\nWynik dla permutacji wynosi {result} mozliwosci.");
             }
             else if (choice == 2)
             {
-                wynik = Kombinacja(num1, num2);
-                Console.WriteLine($"\nWynik dla kombinacji wynosi {wynik} mozliwosci.");
+                result = Kombinacja(num1, num2);
+                Console.WriteLine($"\nWynik dla kombinacji wynosi {result} mozliwosci.");
             }
         }
 
