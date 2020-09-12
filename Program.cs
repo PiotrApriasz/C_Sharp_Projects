@@ -56,7 +56,7 @@ namespace CombinationVS
             }
             else if (choice == 2)
             {
-                result = Kombinacja(num1, num2);
+                result = Combination(num1, num2);
                 Console.WriteLine($"\nThe result for combination is {result} options.");
             }
         }
