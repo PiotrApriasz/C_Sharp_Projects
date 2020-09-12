@@ -11,16 +11,15 @@ namespace CombinationVS
             int choice;
             int result;
 
-            Console.WriteLine("Witaj w programie obliczajacym kombinacje i permutacje.");
-            Console.WriteLine("Wpisz 2 liczby. Liczba pierwsza musi byc wieksza badz rowna drugiej.");
-            Console.WriteLine("Pierwsza z nich to ilosc dostepnych mozliwosci a druga to ilosc opcji na probe\n");
+            Console.WriteLine("Hello! This is a program to calculate combination and permutation.");
+            Console.WriteLine("Enter two numbers. First number must be greater or equal to second.\n");
 
             while (true)
             {
-                Console.Write("Podaj pierwsza liczbe: ");
+                Console.Write("Enter first number: ");
                 num1 = NumbersCheck();
 
-                Console.Write("Podaj druga liczbe: ");
+                Console.Write("Enter second number: ");
                 num2 = NumbersCheck();
 
                 if (num1 >= num2)
@@ -29,11 +28,11 @@ namespace CombinationVS
                 }
                 else
                 {
-                    Console.WriteLine("\nPierwsza liczba jest mniejsza od drugiej. Wpisz poprawne dane\n");
+                    Console.WriteLine("\nFirst number is less than the second. Enter correct numbers.\n");
                 }
             }
 
-            Console.Write("\nJesli chcesz obliczyc permutacje wybierz 1, a jesli chcesz obliczyc kombinacje wybierz 2: ");
+            Console.Write("\nIf you want calculate permutation enter 1, and if you want calculate combination enter 2: ");
             while (true)
             {
                 choice = NumbersCheck();
@@ -44,21 +43,21 @@ namespace CombinationVS
                 }
                 else
                 {
-                    Console.WriteLine("Podano zly numer. Sprobuj jeszcze raz");
-                    Console.Write("Podaj numer: ");
+                    Console.WriteLine("Incorrect choice. Try again.");
+                    Console.Write("Enter number: ");
                     Console.WriteLine();
                 }
             }
 
             if (choice == 1)
             {
-                result = Permutacja(num1, num2);
-                Console.WriteLine($"\nWynik dla permutacji wynosi {result} mozliwosci.");
+                result = Permutation(num1, num2);
+                Console.WriteLine($"\nThe result for permutation is {result} options.");
             }
             else if (choice == 2)
             {
                 result = Kombinacja(num1, num2);
-                Console.WriteLine($"\nWynik dla kombinacji wynosi {result} mozliwosci.");
+                Console.WriteLine($"\nThe result for combination is {result} options.");
             }
         }
 
@@ -69,8 +68,8 @@ namespace CombinationVS
             {
                 if (num < 0 || num == 0)
                 {
-                    Console.WriteLine("Nieprawidlowe dane lub pierwsza liczba mniejsza lub rowna 0");
-                    Console.Write("Sprobuj jeszcze raz: ");
+                    Console.WriteLine("Incorrect numbers.");
+                    Console.Write("Try again: ");
                     num = null;
                 }
                 if (num != null && num > 0)
@@ -83,52 +82,52 @@ namespace CombinationVS
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Nieprawidlowe dane lub pierwsza liczba mniejsza lub rowna 0");
-                    Console.Write("Sprobuj jeszcze raz: ");
+                    Console.WriteLine("Incorrect numbers.");
+                    Console.Write("Try again: ");
                 }
             }
             return (int)num;
         }
 
-        static int Permutacja(int num1, int num2)
+        static int Permutation(int num1, int num2)
         {
-            int silniaNum1 = num1;
-            int roznica;
-            int silniaRoznica;
-            int wynik;
+            int factorialNum1 = num1;
+            int difference;
+            int factorialDifference;
+            int result;
 
             for (int i = 1; i < num1; i++)
             {
-                silniaNum1 *= i;
+                factorialNum1 *= i;
             }
 
-            roznica = num1 - num2;
-            silniaRoznica = roznica;
+            difference = num1 - num2;
+            factorialDifference = difference;
 
-            for (int i = 1; i < roznica; i++)
+            for (int i = 1; i < difference; i++)
             {
-                silniaRoznica *= i;
+                factorialDifference *= i;
             }
 
-            wynik = silniaNum1 / silniaRoznica;
+            result = factorialNum1 / factorialDifference;
 
-            return wynik;
+            return result;
         }
 
-        static int Kombinacja(int num1, int num2)
+        static int Combination(int num1, int num2)
         {
-            int wynik;
-            int silniaNum2 = num2;
-            int permutacja = Permutacja(num1, num2);
+            int result;
+            int factorialNum2 = num2;
+            int permutation = Permutation(num1, num2);
 
             for (int i = 1; i < num2; i++)
             {
-                silniaNum2 *= i;
+                factorialNum2 *= i;
             }
 
-            wynik = permutacja / silniaNum2;
+            result = permutation / factorialNum2;
 
-            return wynik;
+            return result;
         }
     }
 }
