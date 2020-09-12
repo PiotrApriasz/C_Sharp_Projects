@@ -8,7 +8,7 @@ namespace CombinationVS
         {
             int num1;
             int num2;
-            int wybor;
+            int choice;
             int wynik;
 
             Console.WriteLine("Witaj w programie obliczajacym kombinacje i permutacje.");
@@ -36,9 +36,9 @@ namespace CombinationVS
             Console.Write("\nJesli chcesz obliczyc permutacje wybierz 1, a jesli chcesz obliczyc kombinacje wybierz 2: ");
             while (true)
             {
-                wybor = NumbersCheck();
+                choice = NumbersCheck();
 
-                if (wybor == 1 || wybor == 2)
+                if (choice == 1 || choice == 2)
                 {
                     break;
                 }
@@ -50,12 +50,12 @@ namespace CombinationVS
                 }
             }
 
-            if (wybor == 1)
+            if (choice == 1)
             {
                 wynik = Permutacja(num1, num2);
                 Console.WriteLine($"\nWynik dla permutacji wynosi {wynik} mozliwosci.");
             }
-            else if (wybor == 2)
+            else if (choice == 2)
             {
                 wynik = Kombinacja(num1, num2);
                 Console.WriteLine($"\nWynik dla kombinacji wynosi {wynik} mozliwosci.");
