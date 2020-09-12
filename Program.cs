@@ -6,10 +6,10 @@ namespace CombinationVS
     {
         static void Main(string[] args)
         {
-            int num1;
-            int num2;
-            int choice;
-            int result;
+            double num1;
+            double num2;
+            double choice;
+            double result;
 
             Console.WriteLine("Hello! This is a program to calculate combination and permutation.");
             Console.WriteLine("Enter two numbers. First number must be greater or equal to second.\n");
@@ -61,9 +61,9 @@ namespace CombinationVS
             }
         }
 
-        static int NumbersCheck()
+        static double NumbersCheck()
         {
-            Nullable<int> num = null;
+            Nullable<double> num = null;
             while (true)
             {
                 if (num < 0 || num == 0)
@@ -78,7 +78,7 @@ namespace CombinationVS
                 }
                 try
                 {
-                    num = Convert.ToInt32(Console.ReadLine());
+                    num = Convert.ToDouble(Console.ReadLine());
                 }
                 catch (Exception)
                 {
@@ -86,15 +86,15 @@ namespace CombinationVS
                     Console.Write("Try again: ");
                 }
             }
-            return (int)num;
+            return (double)num;
         }
 
-        static int Permutation(int num1, int num2)
+        static double Permutation(double num1, double num2)
         {
-            int factorialNum1 = num1;
-            int difference;
-            int factorialDifference;
-            int result;
+            double factorialNum1 = num1;
+            double difference;
+            double factorialDifference;
+            double result;
 
             for (int i = 1; i < num1; i++)
             {
@@ -114,11 +114,11 @@ namespace CombinationVS
             return result;
         }
 
-        static int Combination(int num1, int num2)
+        static double Combination(double num1, double num2)
         {
-            int result;
-            int factorialNum2 = num2;
-            int permutation = Permutation(num1, num2);
+            double result;
+            double factorialNum2 = num2;
+            double permutation = Permutation(num1, num2);
 
             for (int i = 1; i < num2; i++)
             {
