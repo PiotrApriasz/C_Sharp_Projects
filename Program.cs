@@ -63,7 +63,7 @@ namespace CombinationVS
 
         static double NumbersCheck()
         {
-            Nullable<double> num = null;
+            /*Nullable<double> num = null;
             while (true)
             {
                 if (num < 0 || num == 0)
@@ -86,7 +86,25 @@ namespace CombinationVS
                     Console.Write("Try again: ");
                 }
             }
-            return (double)num;
+            return (double)num;*/
+
+            string numInput = "";
+            double num = 0;
+
+            while (num <= 0)
+            {
+                numInput = Console.ReadLine();
+
+                while (!double.TryParse(numInput, out num))
+                {
+                    Console.Write("This is not valid input. Please enter an correct integer value: ");
+                    numInput = Console.ReadLine();
+                }
+
+                if (num <= 0) Console.Write("This is not valid input. Please enter an correct integer value: ");
+            }
+
+            return num;
         }
 
         static double Permutation(double num1, double num2)
