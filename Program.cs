@@ -63,31 +63,6 @@ namespace CombinationVS
 
         static double NumbersCheck()
         {
-            /*Nullable<double> num = null;
-            while (true)
-            {
-                if (num < 0 || num == 0)
-                {
-                    Console.WriteLine("Incorrect numbers.");
-                    Console.Write("Try again: ");
-                    num = null;
-                }
-                if (num != null && num > 0)
-                {
-                    break;
-                }
-                try
-                {
-                    num = Convert.ToDouble(Console.ReadLine());
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Incorrect numbers.");
-                    Console.Write("Try again: ");
-                }
-            }
-            return (double)num;*/
-
             string numInput = "";
             double num = 0;
 

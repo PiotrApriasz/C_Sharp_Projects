@@ -4,3 +4,4 @@ CombinationWithGit.sln
 obj/
 .swp
 bin/
+CalculationsLibrary/CalculationsLibrary.csproj
